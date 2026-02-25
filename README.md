@@ -6,6 +6,8 @@ Zoyi ZT219 / Aneng AN870 EEPROM Editor written in client-side JavaScript embedde
 
 This editor works fully offline. You can download [the editor file](src/index.html) and just open it locally in a browser on your computer (in a modern browser).
 
+An example of dumped eeprom
+[eeprom_dump_file](aneng_870_original_eeprom_dump.bin)
 
 ## Inner workings
 
@@ -23,4 +25,10 @@ directly into 230 VAC socket. Transil is cheap and... nothing more. 6,8V makes t
 The 5 diodes bridge (popular in the majority of multimeters) does not impact a measurement precision on uA and mA range.  Capacitors improve readout stability.
 
 ![hardware_mods](doc/Aneng_AN870_mods.jpg)
+
+#### Datasheets of DMM chip DTM0660L (the clone of HY12P65)
+[multimeter_schematic](Zoyi_zt219_Aneng_an870_v3.1_schematic.pdf)
+[datasheet1](DTM0660 (auto-translated).pdf)
+[datasheet2](DTM0660DataSheet.pdf)
+[datasheet3](DS-HY12P65_EN.pdf)
 
