@@ -28,7 +28,10 @@ The 5 diodes bridge (popular in the majority of multimeters) does not impact a m
 
 #### Datasheets of DMM chip DTM0660L (the clone of HY12P65)
 [multimeter_schematic](Zoyi_zt219_Aneng_an870_v3.1_schematic.pdf)
-[datasheet1](DTM0660 (auto-translated).pdf)
-[datasheet2](DTM0660DataSheet.pdf)
+
+[datasheet1](DTM0660_datasheet.pdf)
+
+[datasheet2](DTM0660_datasheet_auto-translated.pdf)
+
 [datasheet3](DS-HY12P65_EN.pdf)
 
