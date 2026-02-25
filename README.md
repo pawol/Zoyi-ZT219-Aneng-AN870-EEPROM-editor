@@ -7,7 +7,7 @@ Zoyi ZT219 / Aneng AN870 EEPROM Editor written in client-side JavaScript embedde
 This editor works fully offline. You can download [the editor file](src/index.html) and just open it locally in a browser on your computer (in a modern browser).
 
 An example of dumped eeprom
-[eeprom_dump_file](aneng_870_original_eeprom_dump.bin)
+[eeprom_dump_file](doc/aneng_870_original_eeprom_dump.bin)
 
 ## Inner workings
 
@@ -27,11 +27,11 @@ The 5 diodes bridge (popular in the majority of multimeters) does not impact a m
 ![hardware_mods](doc/Aneng_AN870_mods.jpg)
 
 #### Datasheets of DMM chip DTM0660L (the clone of HY12P65)
-[multimeter_schematic](Zoyi_zt219_Aneng_an870_v3.1_schematic.pdf)
+[multimeter_schematic](doc/Zoyi_zt219_Aneng_an870_v3.1_schematic.pdf)
 
-[datasheet1](DTM0660_datasheet.pdf)
+[datasheet1](doc/DTM0660_datasheet.pdf)
 
-[datasheet2](DTM0660_datasheet_auto-translated.pdf)
+[datasheet2](doc/DTM0660_datasheet_auto-translated.pdf)
 
-[datasheet3](DS-HY12P65_EN.pdf)
+[datasheet3](doc/DS-HY12P65_EN.pdf)
 
