@@ -18,8 +18,9 @@ It should be rather easy task to modify the source code to support any other `EE
 ### Hardware improvements
 
 I suggest to introduce some hardware modifications.
-The most important is to replace existing transil 6,8V onto 5 diodes bridge to ensure better protection of 1 ohm shunt in case of accidential connection of ammeter (200mA range)
-directly into 230 VAC socket. The bridge does not impact a measurement precision on uA and mA range.  Capacitors improve readout stability.
+The most important is to replace existing transil 6,8V onto 5 diodes bridge to ensure better protection of 1 ohm/0.2W shunt in case of accidential connection of ammeter (200mA range)
+directly into 230 VAC socket. Transil is cheap and... nothing more. 6,8V makes that shunt resitor 1 ohm/0.2W has to bear 10x more power than in case of bridge.
+The 5 diodes bridge (popular in the majority of multimeters) does not impact a measurement precision on uA and mA range.  Capacitors improve readout stability.
 
 ![hardware_mods](doc/Aneng_AN870_mods.jpg)
 
