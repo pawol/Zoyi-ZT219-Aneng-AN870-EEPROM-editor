@@ -1,8 +1,8 @@
-# Zoyi ZT219 / Aneng AN870 EEPROM Editor (by pawol)
+# Zoyi ZT219 / Aneng AN870 EEPROM Editor (forked by pawol)
 
 Zoyi ZT219 / Aneng AN870 EEPROM Editor written in client-side JavaScript embedded in a single HTML page, fully offline.
 
-![UT210E Editor Screenshot 01](doc/editor_screenshot.png)
+![editor_screenshot](doc/editor_screenshot.png)
 
 This editor works fully offline. You can download [the editor file](src/index.html) and open it in a browser from your computer (in a modern browser), no server is required.
 
