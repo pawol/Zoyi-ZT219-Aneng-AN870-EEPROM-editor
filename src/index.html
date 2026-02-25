@@ -161,7 +161,7 @@
    </head>
   <body>
       <div id="main_container">
-        <h1><a href="https://github.com/pawol/Zoyi-ZT219_Aneng-AN870_EEPROM_Editor">Zoyi ZT219/ Aneng AN870</a> v1.0 by (<a href="https://github.com/pawol">pawol</a>)</h1>
+        <h1><a href="https://github.com/pawol/Zoyi-ZT219_Aneng-AN870_EEPROM_Editor">Zoyi ZT219/ Aneng AN870</a> v1.0 (forked by <a href="https://github.com/pawol">pawol</a>)</h1>
         <div class="bibliography">Sources:
             <a href="https://www.youtube.com/watch?v=Vj6b-clYTis">TheHWcave</a>
              | Kerrywong [<a href="http://www.kerrywong.com/2016/03/19/hacking-dtm0660l-based-multimeters/">1</a>]
@@ -261,7 +261,7 @@ const bin_ranges = [
         default: 0x1710,
         description: "Range (EEPROM address: 0x10)",
         proc: "num",
-        section_description: 'Full range counts (doesn\'t apply to capacitance). True meaning unknown (!). <ul><li><strong>ZT219/AN870 default</strong>: 5904 (0x1710).</li></ul>'
+        section_description: 'Full range counts. <strong>It seems not to be applied. True meaning is unknown (!)</strong>. <ul><li><strong>ZT219/AN870 default</strong>: 5904 (0x1710).</li></ul>'
     },
     {
         offset: 0x12,
@@ -269,7 +269,7 @@ const bin_ranges = [
         default: 0x4E20,
         description: "Range switch upper threshold (EEPROM address: 0x12)",
         proc: "num",
-        section_description: 'After exceeding this count value the meter switches to the next range (in auto-ranging mode) or shows the overload symbol OL (in manual mode). <br>To avoid switching between modes on borderline values, incorporate some hysteresis (+ ~10%) into this value. (Doesn\'t apply to capacitance) <ul><li><strong>ZT219/AN870 default</strong>: 20000 (0x4E20).</li></ul>'
+        section_description: 'After exceeding this count value the meter switches to the next range (in auto-range mode) or shows the overload symbol OL (in manual mode). <br>To avoid switching between modes on borderline values, ensure some hysteresis +200 decimal units to this value.<br>When your LCD is not able to display increased by +200 units value (because LCD type 9999 cannot display 12000 and LCD type 19999 cannot display 22000) you have to set upper treshold to the value 10000 or 20000.<br>Doesn\'t apply to capacitance. <ul><li><strong>ZT219/AN870 default</strong>: 20000 (0x4E20).</li></ul>'
     },
     {
         offset: 0x14,
@@ -277,7 +277,7 @@ const bin_ranges = [
         default: 0x0708,
         description: "Range switch lower threshold (EEPROM address: 0x14)",
         proc: "num",
-        section_description: 'After going below this count the meter switches back to the previous range (in auto-ranging mode). No effect in manual mode.<br>To avoid switching between modes on borderline values, incorporate some hysteresis (- ~5%) into this value. (Doesn\'t apply to capacitance) <ul><li><strong>ZT219/AN870 default</strong>: 1800 (0x0708).</li></ul>'
+        section_description: 'After going below this count the meter switches back to the previous range (in auto-range mode). No effect in manual mode.<br>To avoid switching between modes on borderline values, ensure some hysteresis -20 decimal units (for LCD type 9999) or -200 decimal units (for LCD type 19999) into this value. Doesn\'t apply to capacitance. <ul><li><strong>ZT219/AN870 default</strong>: 1800 (0x0708).</li></ul>'
     },
     {
         offset: 0x16,
@@ -458,7 +458,7 @@ const bin_ranges = [
         default: 0x0700,
         description: "AC 200mV div (EEPROM address: 0x44)",
         proc: "num",
-        section_description: "AC 200mV range noise to be subtracted (10M resistor divider, amplified). <br><ul><li><strong>ZT219/AN870 default</strong>: 1792 (0x700).</li></ul>"
+        section_description: "AC 200mV range noise to be subtracted (for 10Mohm resistor divider, amplified). <br><ul><li><strong>ZT219/AN870 default</strong>: 1792 (0x700).</li></ul>"
     },
     {
         offset: 0x46,
@@ -466,7 +466,7 @@ const bin_ranges = [
         default: 0x0098,
         description: "AC 2V div (EEPROM address: 0x46)",
         proc: "num",
-        section_description: "AC 2V range noise to be subtracted (10M resistor divider). <br><ul><li><strong>ZT219/AN870 default</strong>: 152 (0x0098).</li></ul>"
+        section_description: "AC 2V range noise to be subtracted (for 10Mohm resistor divider). <br><ul><li><strong>ZT219/AN870 default</strong>: 152 (0x0098).</li></ul>"
     },
     {
         offset: 0x48,
@@ -474,7 +474,7 @@ const bin_ranges = [
         default: 0x0064,
         description: "AC 20V div (EEPROM address: 0x48)",
         proc: "num",
-        section_description: "AC 20V range noise to be subtracted (10M resistor divider). <br><ul><li><strong>ZT219/AN870 default</strong>: 100 (0x0064).</li></ul>"
+        section_description: "AC 20V range noise to be subtracted (for 10Mohm resistor divider). <br><ul><li><strong>ZT219/AN870 default</strong>: 100 (0x0064).</li></ul>"
     },
     {
         offset: 0x4A,
@@ -482,7 +482,7 @@ const bin_ranges = [
         default: 0x0064,
         description: "AC 200V div (EEPROM address: 0x4A)",
         proc: "num",
-        section_description: "AC 200V range noise to be subtracted (10M resistor divider). <br><ul><li><strong>ZT219/AN870 default</strong>: 100 (0x0064).</li></ul>"
+        section_description: "AC 200V range noise to be subtracted (for 10Mohm resistor divider). <br><ul><li><strong>ZT219/AN870 default</strong>: 100 (0x0064).</li></ul>"
     },
     {
         offset: 0x4C,
@@ -490,7 +490,7 @@ const bin_ranges = [
         default: 0x0064,
         description: "AC 1000V div (EEPROM address: 0x4C)",
         proc: "num",
-        section_description: "AC 1000V range noise to be subtracted (10M resistor divider). <br><ul><li><strong>ZT219/AN870 default</strong>: 100 (0x0064).</li></ul>"
+        section_description: "AC 1000V range noise to be subtracted (for 10Mohm resistor divider). <br><ul><li><strong>ZT219/AN870 default</strong>: 100 (0x0064).</li></ul>"
     },
     // 0x4E..0x4F - unknown 0x0000
     {
@@ -499,7 +499,7 @@ const bin_ranges = [
         default: null,
         description: "Calibration data for amps [A] (EEPROM address: 0x50)",
         proc: "cal",
-        section_description: "Calibration data for amps - <strong>200A and 2000A range is not applicable for ZT219/AN870</strong>"
+        section_description: "Calibration data for amps - <strong>200A and 2000A range does not apply for ZT219/AN870</strong>"
     },
 
     {
