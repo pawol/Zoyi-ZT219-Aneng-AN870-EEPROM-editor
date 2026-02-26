@@ -364,23 +364,23 @@ const bin_ranges = [
         offset: 0x24,
         len: T_WORD,
         default: 0x0320,
-        description: "NCV base number (EEPROM address: 0x24)",
+        description: "NCV base level (EEPROM address: 0x24)",
         proc: "num",
-        section_description: "NCV base number (10.0 mV). <br><ul><li><strong>ZT219/AN870 default</strong>: 800 (0x320).</li></ul>"
+        section_description: "NCV base level, (value x 0.1 mV).<br>entry treshold=base level + resolution step (eg. 80mV+150mV=230mV for 1st bar (-) on the LCD).<br><strong>EF</strong> is displayed below entry level.<br><ul><li><strong>ZT219/AN870 default</strong>: 800 (0x320).</li></ul>"
     },
     {
         offset: 0x26,
         len: T_WORD,
         default: 0x05DC,
-        description: "NCV resolution (EEPROM address: 0x26)",
+        description: "NCV resolution step (EEPROM address: 0x26)",
         proc: "num",
-        section_description: "NCV resolution (15.0 mV). <br><ul><li><strong>ZT219/AN870 default</strong>: 1500 (0x05DC).</li></ul>"
+        section_description: "NCV resolution step (value x 0.1 mV).<br>entry treshold=base level + resolution step (eg. 80mV+150mV=230mV for 1st bar on the LCD).<br>Next bar (-) is displayed every next resolution step.<br><ul><li><strong>ZT219/AN870 default</strong>: 1500 (0x05DC).</li></ul>"
     },
     {
         offset: 0x28,
         len: T_WORD,
         default: 0x8000,
-        description: "AC 2V range compensation ratio (EEPROM address: 0x28)",
+        description: "AC 6V range compensation ratio (EEPROM address: 0x28)",
         proc: "num",
         section_description: "AC 2V range compensation ratio (frequency)."
     },
@@ -388,15 +388,15 @@ const bin_ranges = [
         offset: 0x2A,
         len: T_WORD,
         default: 0x8000,
-        description: "500 μA calibration (EEPROM address: 0x2A)",
+        description: "500μA calibration (EEPROM address: 0x2A)",
         proc: "num",
-        section_description: "500uA calibration adjustment ratio."
+        section_description: "500μA calibration adjustment ratio."
     },
     {
         offset: 0x2C,
         len: T_WORD,
         default: 0x8000,
-        description: "50 mA calibration (EEPROM address: 0x2C)",
+        description: "50mA calibration (EEPROM address: 0x2C)",
         proc: "num",
         section_description: "50mA calibration adjustment ratio."
     },
@@ -404,7 +404,7 @@ const bin_ranges = [
         offset: 0x2E,
         len: T_WORD,
         default: 0x8000,
-        description: "5 A calibration (EEPROM address: 0x2E)",
+        description: "5A calibration (EEPROM address: 0x2E)",
         proc: "num",
         section_description: "5A calibration adjustment ratio."
     },
@@ -440,49 +440,49 @@ const bin_ranges = [
         offset: 0x40,
         len: T_WORD,
         default: 0x0100,
-        description: "AC 20mV (EEPROM address: 0x40)",
+        description: "AC 60mV (EEPROM address: 0x40)",
         proc: "num",
-        section_description: "AC 20mV range noise to be subtracted (input signal is internally amplified). <br><ul><li><strong>ZT219/AN870 default</strong>: 256 (0x0100).</li></ul>"
+        section_description: "AC 60mV range noise to be subtracted (input signal is internally amplified). <br><ul><li><strong>ZT219/AN870 default</strong>: 256 (0x0100).</li></ul>"
     },
     {
         offset: 0x42,
         len: T_WORD,
         default: 0x0100,
-        description: "AC 200mV (EEPROM address: 0x42)",
+        description: "AC 600mV (EEPROM address: 0x42)",
         proc: "num",
-        section_description: "AC 200mV range noise to be subtracted (input signal is not amplified). <br><ul><li><strong>ZT219/AN870 default</strong>: 256 (0x0100).</li></ul>"
+        section_description: "AC 600mV range noise to be subtracted (input signal is not amplified). <br><ul><li><strong>ZT219/AN870 default</strong>: 256 (0x0100).</li></ul>"
     },
     {
         offset: 0x44,
         len: T_WORD,
         default: 0x0700,
-        description: "AC 200mV div (EEPROM address: 0x44)",
+        description: "AC 600mV div (EEPROM address: 0x44)",
         proc: "num",
-        section_description: "AC 200mV range noise to be subtracted (10MOhm/1MOhm resistor divider, amplified). <br><ul><li><strong>ZT219/AN870 default</strong>: 1792 (0x700).</li></ul>"
+        section_description: "AC 600mV range noise to be subtracted (10MOhm/1MOhm resistor divider, amplified). <br><ul><li><strong>ZT219/AN870 default</strong>: 1792 (0x700).</li></ul>"
     },
     {
         offset: 0x46,
         len: T_WORD,
         default: 0x0098,
-        description: "AC 2V div (EEPROM address: 0x46)",
+        description: "AC 6V div (EEPROM address: 0x46)",
         proc: "num",
-        section_description: "AC 2V range noise to be subtracted (10MOhm/1MOhm resistor divider). <br><ul><li><strong>ZT219/AN870 default</strong>: 152 (0x0098).</li></ul>"
+        section_description: "AC 6V range noise to be subtracted (10MOhm/1MOhm resistor divider). <br><ul><li><strong>ZT219/AN870 default</strong>: 152 (0x0098).</li></ul>"
     },
     {
         offset: 0x48,
         len: T_WORD,
         default: 0x0064,
-        description: "AC 20V div (EEPROM address: 0x48)",
+        description: "AC 60V div (EEPROM address: 0x48)",
         proc: "num",
-        section_description: "AC 20V range noise to be subtracted (10MOhm/100kOhm resistor divider). <br><ul><li><strong>ZT219/AN870 default</strong>: 100 (0x0064).</li></ul>"
+        section_description: "AC 60V range noise to be subtracted (10MOhm/100kOhm resistor divider). <br><ul><li><strong>ZT219/AN870 default</strong>: 100 (0x0064).</li></ul>"
     },
     {
         offset: 0x4A,
         len: T_WORD,
         default: 0x0064,
-        description: "AC 200V div (EEPROM address: 0x4A)",
+        description: "AC 600V div (EEPROM address: 0x4A)",
         proc: "num",
-        section_description: "AC 200V range noise to be subtracted (10MOhm/10kOhm resistor divider). <br><ul><li><strong>ZT219/AN870 default</strong>: 100 (0x0064).</li></ul>"
+        section_description: "AC 600V range noise to be subtracted (10MOhm/10kOhm resistor divider). <br><ul><li><strong>ZT219/AN870 default</strong>: 100 (0x0064).</li></ul>"
     },
     {
         offset: 0x4C,
@@ -497,9 +497,9 @@ const bin_ranges = [
         offset: 0x50,
         len: 0x10,
         default: null,
-        description: "Calibration data for amps [A] (EEPROM address: 0x50)",
+        description: "Quick calibration data for amps [A] (EEPROM address: 0x50-0x5F)",
         proc: "cal",
-        section_description: "Calibration data for amps - <strong>200A and 2000A range does not apply for ZT219/AN870</strong>"
+        section_description: "Quick calibration data for amps. It seems not to be used."
     },
 
     {
@@ -549,7 +549,7 @@ const bin_ranges = [
         offset: 0x74,
         len: T_WORD,
         default: 0x8000,
-        description: "500 μF calibration (EEPROM address: 0x74)",
+        description: "500μF calibration (EEPROM address: 0x74)",
         proc: "num",
         section_description: "500μF capacitor calibration adjustment ratio."
     },
@@ -565,9 +565,9 @@ const bin_ranges = [
         offset: 0x78,
         len: T_WORD,
         default: 0x0118,
-        description: "Calibration: capacitor baseline (EEPROM address: 0x78)",
+        description: "Calibration: residual input capacitance (EEPROM address: 0x78)",
         proc: "num",
-        section_description: "Capacitor 9nF range base line to be subtracted (e.g. when no capacitor is connected, unit 0.001 nF)."
+        section_description: "Residual input capacitance to be subtracted (no external capacitor is connected, <strong>unit 0.001 nF, max. 9nF</strong>)."
     },
     // 0x7A..0x7F - unknown (0x00 fill)
 
@@ -586,33 +586,33 @@ const bin_ranges = [
         offset: 0xE8,
         len: T_WORD,
         default: 0x8000,
-        description: "Calibration: DC 200mV adj ratio (EEPROM address: 0xE8)",
+        description: "Calibration: DC 600mV adj ratio (EEPROM address: 0xE8)",
         proc: "num",
-        section_description: "DC 200mV range calibration adjustment ratio."
+        section_description: "DC 600mV range calibration adjustment ratio."
     },
     {
         offset: 0xEA,
         len: T_WORD,
         default: 0x8000,
-        description: "Calibration: DC 2V adj ratio (EEPROM address: 0xEA)",
+        description: "Calibration: DC 6V adj ratio (EEPROM address: 0xEA)",
         proc: "num",
-        section_description: "DC 2V range calibration adjustment ratio."
+        section_description: "DC 6V range calibration adjustment ratio."
     },
     {
         offset: 0xEC,
         len: T_WORD,
         default: 0x8000,
-        description: "Calibration: DC 20V adj ratio (EEPROM address: 0xEC)",
+        description: "Calibration: DC 60V adj ratio (EEPROM address: 0xEC)",
         proc: "num",
-        section_description: "DC 20V range calibration adjustment ratio."
+        section_description: "DC 60V range calibration adjustment ratio."
     },
     {
         offset: 0xEE,
         len: T_WORD,
         default: 0x8000,
-        description: "Calibration: DC 200V adj ratio (EEPROM address: 0xEE)",
+        description: "Calibration: DC 600V adj ratio (EEPROM address: 0xEE)",
         proc: "num",
-        section_description: "DC 200V range calibration adjustment ratio."
+        section_description: "DC 600V range calibration adjustment ratio."
     },
 
     {
@@ -816,10 +816,10 @@ const bin_ranges = [
 
 const measurement_modes = new Map([
     {value: 0x00, description: "No function"},
-    {value: 0x01, description: "DC mV, (20mV/200mV)"},
-    {value: 0x02, description: "AC mV, (20mV/200mV)"},
-    {value: 0x03, description: "DC V, (no mV range) 2V/20V/200V/2000V"},
-    {value: 0x04, description: "AC V, (no mV range) 2V/20V/200V/2000V"},
+    {value: 0x01, description: "DC mV, 20mV/200mV"},
+    {value: 0x02, description: "AC mV, 20mV/200mV"},
+    {value: 0x03, description: "DC V, 2V/20V/200V/2000V"},
+    {value: 0x04, description: "AC V, 2V/20V/200V/2000V"},
     {value: 0x05, description: "DC V, 200mV/2V/20V/200V/2000V"},
     {value: 0x06, description: "AC V, 200mV/2V/20V/200V/2000V"},
     {value: 0x07, description: "Resistance 200Ω/2kΩ/20kΩ/200kΩ/2MΩ/20MΩ/200MΩ"},
@@ -833,7 +833,7 @@ const measurement_modes = new Map([
     {value: 0x0F, description: "AC mA, 20mA/200mA"},
     {value: 0x10, description: "DC A, 2A/20A"},
     {value: 0x11, description: "AC A, 2A/20A"},
-    {value: 0x12, description: "Frequency (Hz) / Duty"},
+    {value: 0x12, description: "Frequency (Hz) / Duty (%)"},
     {value: 0x13, description: "Temperature (°C)"},
     {value: 0x14, description: "Transistor hFe"},
     {value: 0x15, description: "Temperature (°F)"},
@@ -1160,7 +1160,7 @@ function calEditor(rangeItem) {
     };
 
     // For each available A range
-    for (let [calRange, offset] of [["2A", 0], ["20A", 2], ["200A",4], ["2000A",6]]) {
+    for (let [calRange, offset] of [["6A", 0], ["60A", 2], ["600A",4], ["6000A",6]]) {
         const [eListItem, eEditor] = addEditField(rangeItem.offset+offset, `For ${calRange} (correction): `);
         {
             // Add en editor for correction factor (as a floating point number)
