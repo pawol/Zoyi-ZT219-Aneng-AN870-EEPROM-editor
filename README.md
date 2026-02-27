@@ -14,7 +14,7 @@ You can also use it online [online_eeprom_editor](https://pawol.github.io/Zoyi-Z
 An example of dumped eeprom
 [eeprom dump file](doc/aneng_870_original_eeprom_dump.bin)
 
-## Inner workings
+# Inner workings
 
 This project was created to alleviate the pain of hand-editing the hex dump and to explore contemporary JavaScript syntax along with API supported by the modern Chrome browser (other browsers not tested - pull requests fixing possible issues are welcomed!).
 
@@ -22,7 +22,7 @@ Should you notice any errors, want to add missing range, update the description,
 
 It should be rather easy task to modify the source code to support any other `EEPROM` - the page is generated dynamically based on [the `bin_ranges` variable]
 
-### Hardware improvements
+# Hardware improvements
 
 I suggest to introduce some hardware modifications.
 The most important is to replace existing transil 6,8V onto 5 diodes bridge to ensure better protection of 1 ohm/0.2W shunt in case of accidential connection of ammeter (200mA range)
@@ -32,7 +32,7 @@ The 5 diodes bridge (popular in the majority of multimeters) does not impact a m
 ![hardware_mods](doc/bridge.png)
 ![hardware_mods](doc/Aneng_AN870_mods.jpg)
 
-#### Datasheets of DMM chip DTM0660L (the clone of HY12P65)
+# Datasheets of DMM chip DTM0660L (the clone of HY12P65)
 [Aneng AN870/Zoyi ZT219 schematic diagram](doc/Zoyi_zt219_Aneng_an870_v3.1_schematic.pdf)
 
 [datasheet 1](doc/DTM0660_datasheet.pdf)
