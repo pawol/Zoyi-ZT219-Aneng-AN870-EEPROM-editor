@@ -6,7 +6,7 @@ A few HW improvements pointed.
 
 You can download [offline eeprom editor](src/index.html)
 and then just open index.html in a browser on your PC.
-You can also use one [online eeprom editor](https://pawol.github.io/Zoyi-ZT219-Aneng-AN870-EEPROM-editor/)
+You can also use one [online eeprom editor](https://pawol.github.io/Zoyi-ZT219-Aneng-AN870-EEPROM-editor/src/index.html)
 
 
 ![editor screenshot](doc/editor_screenshot.png)
