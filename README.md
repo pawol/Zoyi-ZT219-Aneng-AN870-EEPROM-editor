@@ -4,8 +4,8 @@ Zoyi ZT219 / Aneng AN870 EEPROM Editor written in client-side in a single HTML p
 A few HW improvements pointed.
 
 
-You can download offline editor there [offline eeprom editor](src/index.html)
-Just open one locally in a browser on your computer.
+You can download offline editor [offline eeprom editor](src/index.html)
+And then just open one locally in a browser on your PC.
 You can also use one online [online eeprom editor](https://pawol.github.io/Zoyi-ZT219-Aneng-AN870-EEPROM-editor/)
 
 
