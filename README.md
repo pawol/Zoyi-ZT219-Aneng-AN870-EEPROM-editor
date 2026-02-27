@@ -3,10 +3,12 @@
 Zoyi ZT219 / Aneng AN870 EEPROM Editor written in client-side in a single HTML page, fully offline.
 A few HW improvements pointed.
 
-![editor screenshot](doc/editor_screenshot.png)
 
-This editor works fully offline. You can download [offline_eeprom_editor](src/index.html) and just open it locally in a browser on your computer (in a modern browser).
+This editor works fully offline. You can download [offline_eeprom_editor](src/index.html)
+and just open it locally in a browser on your computer (in a modern browser).
 You can also use it online [online_eeprom_editor](https://pawol.github.io/Zoyi-ZT219-Aneng-AN870-EEPROM-editor/)
+
+![editor screenshot](doc/editor_screenshot.png)
 
 An example of dumped eeprom
 [eeprom dump file](doc/aneng_870_original_eeprom_dump.bin)
