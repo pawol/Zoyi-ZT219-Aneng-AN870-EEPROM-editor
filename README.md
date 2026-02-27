@@ -1,4 +1,4 @@
-# Zoyi ZT219 / Aneng AN870 EEPROM Editor (forked by pawol)
+# Zoyi ZT219 / Aneng AN870 EEPROM Editor and HW improvements
 
 Zoyi ZT219 / Aneng AN870 EEPROM Editor written in client-side JavaScript embedded in a single HTML page, fully offline.
 
