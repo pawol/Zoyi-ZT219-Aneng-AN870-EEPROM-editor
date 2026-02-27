@@ -506,17 +506,17 @@ const bin_ranges = [
         offset: 0x60,
         len: T_WORD,
         default: 0x8000,
-        description: "50kΩ calibration (EEPROM address: 0x60)",
+        description: "10kΩ calibration (EEPROM address: 0x60)",
         proc: "num",
-        section_description: "50kΩ resistor calibration."
+        section_description: "10kΩ resistor calibration."
     },
     {
         offset: 0x62,
         len: T_WORD,
         default: 0x8000,
-        description: "50MΩ calibration (EEPROM address: 0x62)",
+        description: "10MΩ calibration (EEPROM address: 0x62)",
         proc: "num",
-        section_description: "50MΩ resistor calibration."
+        section_description: "10MΩ resistor calibration."
     },
     // 0x64..0x66 - unknown
     {
@@ -537,14 +537,6 @@ const bin_ranges = [
         proc: "num",
         section_description: "500nF capacitor calibration."
     },
-//    {
-//        offset: 0x72,
-//        len: T_WORD,
-//        default: 0x8000,
-//        description: "50μF calibration (EEPROM address: 0x72)",
-//        proc: "num",
-//        section_description: "50μF capacitor calibration."
-//    },
     {
         offset: 0x74,
         len: T_WORD,
