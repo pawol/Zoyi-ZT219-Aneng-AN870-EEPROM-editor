@@ -227,55 +227,55 @@ const bin_ranges = [
         offset: 0x0B,
         len: T_WORD,
         default: 0x00E6,
-        description: "Environment temperature (EEPROM address: 0x0B)",
+        description: "Environment temperature [°C] (EEPROM address: 0x0B)",
         proc: "num",
-        section_description: "Environment temperature [Celsius]."
+        section_description: "Environment temperature (unit*0.1°C)."
     },
     {
         offset: 0x0D,
         len: T_BYTE,
         default: 0xC0,
-        description: "Environment temperature default ADC value (byte 1) (EEPROM address: 0x0D)",
+        description: "Environment temperature ADC value (byte1) (EEPROM address: 0x0D)",
         proc: "num",
-        section_description: "Environment temperature default ADC value (byte 1)."
+        section_description: "Environment temperature ADC value (byte1)."
     },
     {
         offset: 0x0E,
         len: T_BYTE,
         default: 0xEF,
-        description: "Environment temperature default ADC value (byte 2) (EEPROM address: 0x0E)",
+        description: "Environment temperature ADC value (byte2) (EEPROM address: 0x0E)",
         proc: "num",
-        section_description: "Environment temperature default ADC value (byte 2)."
+        section_description: "Environment temperature ADC value (byte2)."
     },
     {
         offset: 0x0F,
         len: T_BYTE,
         default: 0x03,
-        description: "Environment temperature default ADC value (byte 3) (EEPROM address: 0x0F)",
+        description: "Environment temperature ADC value (byte3) (EEPROM address: 0x0F)",
         proc: "num",
-        section_description: "Environment temperature default ADC value (byte 3)."
+        section_description: "Environment temperature ADC value (byte3)."
     },
     {
         offset: 0x10,
         len: T_WORD,
         default: 0x1710,
-        description: "Range (EEPROM address: 0x10)",
+        description: "Full range width (EEPROM address: 0x10)",
         proc: "num",
-        section_description: 'Full range counts. <strong>It seems not to be applied for ZT219/AN870. True meaning is unknown (!)</strong>. <ul><li><strong>ZT219/AN870 default</strong>: 5904 (0x1710).</li></ul>'
+        section_description: 'Full range width. <strong>It seems not to be applied for ZT219/AN870. True meaning is unknown.</strong>. <ul><li><strong>ZT219/AN870 default</strong>: 5904 (0x1710).</li></ul>'
     },
     {
         offset: 0x12,
         len: T_WORD,
         default: 0x4E20,
-        description: "Range switch upper threshold (EEPROM address: 0x12)",
+        description: "Range switching upper threshold (EEPROM address: 0x12)",
         proc: "num",
-        section_description: 'After exceeding this count value the meter switches to the next range (in auto-range mode) or shows the overload symbol OL (in manual mode). <br>To avoid switching between modes on borderline values, ensure some hysteresis +200 decimal units to this value.<br>When your LCD is not able to display increased by +200 units value (because LCD type 9999 cannot display 12000 and LCD type 19999 cannot display 22000) you have to set upper treshold to the value 10000 or 20000.<br>Doesn\'t apply to capacitance. <ul><li><strong>ZT219/AN870 default</strong>: 20000 (0x4E20).</li></ul>'
+        section_description: 'After exceeding this count value the meter switches to the next range (in auto-range mode) or shows the overload symbol OL (in manual mode). <br>To avoid switching between modes on borderline values, ensure some hysteresis +201 decimal units to this value.<br>When your LCD is not able to display increased by +201 units value (because LCD type 9999 cannot display 12000 and LCD type 19999 cannot display 22000) you have to set upper treshold to the value 10000 or 20000.<br>Doesn\'t apply to capacitance. <ul><li><strong>ZT219/AN870 default</strong>: 20000 (0x4E20).</li></ul>'
     },
     {
         offset: 0x14,
         len: T_WORD,
         default: 0x0708,
-        description: "Range switch lower threshold (EEPROM address: 0x14)",
+        description: "Range switching lower threshold (EEPROM address: 0x14)",
         proc: "num",
         section_description: 'After going below this count the meter switches back to the previous range (in auto-range mode). No effect in manual mode.<br>To avoid switching between modes on borderline values, ensure some hysteresis -20 decimal units (for LCD type 9999) or -200 decimal units (for LCD type 19999) into this value. Doesn\'t apply to capacitance. <ul><li><strong>ZT219/AN870 default</strong>: 1800 (0x0708).</li></ul>'
     },
@@ -283,57 +283,57 @@ const bin_ranges = [
         offset: 0x16,
         len: T_BYTE,
         default: 0x6E,
-        description: "DC Over-voltage [V] (EEPROM address: 0x16)",
+        description: "DC V over voltage treshold [V] (EEPROM address: 0x16)",
         proc: "num",
-        section_description: 'DC Voltage OL value on 2000V range (unit *10V). <br><ul><li><strong>ZT219/AN870 default</strong>: 110 (0x6E).</li></ul>'
+        section_description: 'DC V OL treshold (unit*10V). <br><ul><li><strong>ZT219/AN870 default</strong>: 110 (0x6E).</li></ul>'
     },
     {
         offset: 0x17,
         len: T_BYTE,
         default: 0x50,
-        description: "AC Over-voltage [V] (EEPROM address: 0x17)",
+        description: "AC V over voltage treshold [V] (EEPROM address: 0x17)",
         proc: "num",
-        section_description: 'AC Voltage OL value on 2000V range (unit *10V). <br><ul><li><strong>ZT219/AN870 default</strong>: 80 (0x50).</li></ul>'
+        section_description: 'AC V OL treshold (unit*10V). <br><ul><li><strong>ZT219/AN870 default</strong>: 80 (0x50).</li></ul>'
     },
     {
         offset: 0x18,
         len: T_BYTE,
         default: 0x64,
-        description: "DC warning-voltage [V] (EEPROM address: 0x18)",
+        description: "DC V warning voltage [V] (EEPROM address: 0x18)",
         proc: "num",
-        section_description: 'DC Voltage warning voltage on 2000V range (unit *10V). <br><ul><li><strong>ZT219/AN870 default</strong>: 100 (0x64).</li></ul>'
+        section_description: 'DC V warning voltage treshold (unit*10V). <br><ul><li><strong>ZT219/AN870 default</strong>: 100 (0x64).</li></ul>'
     },
     {
         offset: 0x19,
         len: T_BYTE,
         default: 0x4B,
-        description: "AC warning-voltage [V] (EEPROM address: 0x19)",
+        description: "AC V warning voltage [V] (EEPROM address: 0x19)",
         proc: "num",
-        section_description: 'AC Voltage warning voltage on 2000V range (unit *10V). <br><ul><li><strong>ZT219/AN870 default</strong>: 75 (0x4B).</li></ul>'
+        section_description: 'AC V warning voltage treshold (unit*10V). <br><ul><li><strong>ZT219/AN870 default</strong>: 75 (0x4B).</li></ul>'
     },
     {
         offset: 0x1A,
         len: T_BYTE,
         default: 0x3C,
-        description: "μA current warning [μA]. Does not work as expected. (EEPROM address: 0x1A)",
+        description: "(μA) current warning treshold [μA] (EEPROM address: 0x1A)",
         proc: "num",
-        section_description: 'μA range warning current 2000uA (unit *100uA). <br><ul><li><strong>ZT219/AN870 default</strong>: 60 (0x3C).</li></ul>'
+        section_description: '(μA) range warning treshold (unit*100μA).<br>It seems does not work as expected.<br><ul><li><strong>ZT219/AN870 default</strong>: 60 (0x3C).</li></ul>'
     },
     {
         offset: 0x1B,
         len: T_BYTE,
         default: 0x3C,
-        description: "mA current warning [mA]. Does not work as expected. (EEPROM address: 0x1B)",
+        description: "(mA) current warning treshold [mA] (EEPROM address: 0x1B)",
         proc: "num",
-        section_description: 'mA range warning current 200mA (unit *100mA). <br><ul><li><strong>ZT219/AN870 default</strong>: 60 (0x3C).</li></ul>'
+        section_description: '(mA) range warning treshold (unit*100mA).<br>It seems does not work as expected.<br><ul><li><strong>ZT219/AN870 default</strong>: 60 (0x3C).</li></ul>'
     },
     {
         offset: 0x1C,
         len: T_BYTE,
         default: 0x0A,
-        description: "A current warning [A] (EEPROM address: 0x1C)",
+        description: "(A) current warning treshold [A] (EEPROM address: 0x1C)",
         proc: "num",
-        section_description: 'After exceeding this value in any of the current measurement modes the current warning is invoked (beeping?). <ul><li><strong>ZT219/AN870 default</strong>: 10 (0x0A).</li></ul>'
+        section_description: '(A) range warning treshold (unit*1A).<br><ul><li><strong>ZT219/AN870 default</strong>: 10 (0x0A).</li></ul>'
     },
     // 0x01D - unknown
     {
@@ -366,7 +366,7 @@ const bin_ranges = [
         default: 0x0320,
         description: "NCV base level (EEPROM address: 0x24)",
         proc: "num",
-        section_description: "NCV base level, (value x 0.1 mV).<br>entry treshold=base level + resolution step (eg. 80mV+150mV=230mV for 1st bar (-) on the LCD).<br><strong>EF</strong> is displayed below entry level.<br><ul><li><strong>ZT219/AN870 default</strong>: 800 (0x320).</li></ul>"
+        section_description: "NCV base level (unit*0.1 mV).<br>entry_treshold=base_level+resolution_step (eg. 80mV+150mV=230mV for 1st bar (-) on the LCD).<br><strong>EF</strong> is displayed below entry level.<br><ul><li><strong>ZT219/AN870 default</strong>: 800 (0x320).</li></ul>"
     },
     {
         offset: 0x26,
@@ -374,7 +374,7 @@ const bin_ranges = [
         default: 0x05DC,
         description: "NCV resolution step (EEPROM address: 0x26)",
         proc: "num",
-        section_description: "NCV resolution step (value x 0.1 mV).<br>entry treshold=base level + resolution step (eg. 80mV+150mV=230mV for 1st bar on the LCD).<br>Next bar (-) is displayed every next resolution step.<br><ul><li><strong>ZT219/AN870 default</strong>: 1500 (0x05DC).</li></ul>"
+        section_description: "NCV resolution step (unit*0.1 mV).<br>entry_treshold=base_level+resolution_step (eg. 80mV+150mV=230mV for 1st bar on the LCD).<br>Next bar (-) is displayed every next resolution step.<br><ul><li><strong>ZT219/AN870 default</strong>: 1500 (0x05DC).</li></ul>"
     },
     {
         offset: 0x28,
@@ -413,34 +413,34 @@ const bin_ranges = [
         offset: 0x35,
         len: T_BYTE,
         default: 0x09,
-        description: "Ohm/Continuity/Diode (EEPROM address: 0x35)",
+        description: "Ω/Continuity/Diode (EEPROM address: 0x35)",
         proc: "num",
-        section_description: "Ohm/Continuity/Diode (???). <br><ul><li><strong>ZT219/AN870 default</strong>: 9 (0x09).</li></ul>"
+        section_description: "Ω/Continuity/Diode (???). <br><ul><li><strong>ZT219/AN870 default</strong>: 9 (0x09).</li></ul>"
     },
     // 0x36..0x3A - unknown
     {
         offset: 0x3B,
         len: T_BYTE,
         default: 0x09,
-        description: "Ohm/Continuity (EEPROM address: 0x3B)",
+        description: "Ω/Continuity (EEPROM address: 0x3B)",
         proc: "num",
-        section_description: "Ohm/Continuity (???). <br><ul><li><strong>ZT219/AN870 default</strong>: 9 (0x09).</li></ul>"
+        section_description: "Ω/Continuity (???). <br><ul><li><strong>ZT219/AN870 default</strong>: 9 (0x09).</li></ul>"
     },
     // 0x3C..0x3D - unknown
     {
         offset: 0x3E,
         len: T_BYTE,
         default: 0x09,
-        description: "Ohm/Continuity (EEPROM address: 0x3E)",
+        description: "Ω/Continuity (EEPROM address: 0x3E)",
         proc: "num",
-        section_description: "Ohm/Continuity (???). <br><ul><li><strong>ZT219/AN870 default</strong>: 9 (0x09).</li></ul>"
+        section_description: "Ω/Continuity (???). <br><ul><li><strong>ZT219/AN870 default</strong>: 9 (0x09).</li></ul>"
     },
     // 0x3F - unknown
     {
         offset: 0x40,
         len: T_WORD,
         default: 0x0100,
-        description: "AC 60mV (EEPROM address: 0x40)",
+        description: "AC 60mV noise (input signal is internally amplified) (EEPROM address: 0x40)",
         proc: "num",
         section_description: "AC 60mV range noise to be subtracted (input signal is internally amplified). <br><ul><li><strong>ZT219/AN870 default</strong>: 256 (0x0100).</li></ul>"
     },
@@ -448,7 +448,7 @@ const bin_ranges = [
         offset: 0x42,
         len: T_WORD,
         default: 0x0100,
-        description: "AC 600mV (EEPROM address: 0x42)",
+        description: "AC 600mV noise (input signal is not amplified) (EEPROM address: 0x42)",
         proc: "num",
         section_description: "AC 600mV range noise to be subtracted (input signal is not amplified). <br><ul><li><strong>ZT219/AN870 default</strong>: 256 (0x0100).</li></ul>"
     },
@@ -456,50 +456,50 @@ const bin_ranges = [
         offset: 0x44,
         len: T_WORD,
         default: 0x0700,
-        description: "AC 600mV div (EEPROM address: 0x44)",
+        description: "AC 600mV noise (with divider) (EEPROM address: 0x44)",
         proc: "num",
-        section_description: "AC 600mV range noise to be subtracted (10MOhm/1MOhm resistor divider, amplified). <br><ul><li><strong>ZT219/AN870 default</strong>: 1792 (0x700).</li></ul>"
+        section_description: "AC 600mV range noise to be subtracted (10MΩ/1MΩ resistor divider, amplified). <br><ul><li><strong>ZT219/AN870 default</strong>: 1792 (0x700).</li></ul>"
     },
     {
         offset: 0x46,
         len: T_WORD,
         default: 0x0098,
-        description: "AC 6V div (EEPROM address: 0x46)",
+        description: "AC 6V noise (with divider) (EEPROM address: 0x46)",
         proc: "num",
-        section_description: "AC 6V range noise to be subtracted (10MOhm/1MOhm resistor divider). <br><ul><li><strong>ZT219/AN870 default</strong>: 152 (0x0098).</li></ul>"
+        section_description: "AC 6V range noise to be subtracted (10MΩ/1MΩ resistor divider). <br><ul><li><strong>ZT219/AN870 default</strong>: 152 (0x0098).</li></ul>"
     },
     {
         offset: 0x48,
         len: T_WORD,
         default: 0x0064,
-        description: "AC 60V div (EEPROM address: 0x48)",
+        description: "AC 60V noise (with divider) (EEPROM address: 0x48)",
         proc: "num",
-        section_description: "AC 60V range noise to be subtracted (10MOhm/100kOhm resistor divider). <br><ul><li><strong>ZT219/AN870 default</strong>: 100 (0x0064).</li></ul>"
+        section_description: "AC 60V range noise to be subtracted (10MΩ/100kΩ resistor divider). <br><ul><li><strong>ZT219/AN870 default</strong>: 100 (0x0064).</li></ul>"
     },
     {
         offset: 0x4A,
         len: T_WORD,
         default: 0x0064,
-        description: "AC 600V div (EEPROM address: 0x4A)",
+        description: "AC 600V (noise with divider) (EEPROM address: 0x4A)",
         proc: "num",
-        section_description: "AC 600V range noise to be subtracted (10MOhm/10kOhm resistor divider). <br><ul><li><strong>ZT219/AN870 default</strong>: 100 (0x0064).</li></ul>"
+        section_description: "AC 600V range noise to be subtracted (10MΩ/10kΩ resistor divider). <br><ul><li><strong>ZT219/AN870 default</strong>: 100 (0x0064).</li></ul>"
     },
     {
         offset: 0x4C,
         len: T_WORD,
         default: 0x0064,
-        description: "AC 1000V div (EEPROM address: 0x4C)",
+        description: "AC 1000V (noise with divider) (EEPROM address: 0x4C)",
         proc: "num",
-        section_description: "AC 1000V range noise to be subtracted (10MOhm/1kOhm resistor divider). <br><ul><li><strong>ZT219/AN870 default</strong>: 100 (0x0064).</li></ul>"
+        section_description: "AC 1000V range noise to be subtracted (10MΩ/1kΩ resistor divider). <br><ul><li><strong>ZT219/AN870 default</strong>: 100 (0x0064).</li></ul>"
     },
     // 0x4E..0x4F - unknown 0x0000
     {
         offset: 0x50,
         len: 0x10,
         default: null,
-        description: "Quick calibration data for amps [A] (EEPROM address: 0x50-0x5F)",
+        description: "Calibration data for strong Amperes ranges [A] (EEPROM address: 0x50-0x5F)",
         proc: "cal",
-        section_description: "Quick calibration data for amps. It seems not to be used."
+        section_description: "Calibration data for strong Amperes ranges [A]. It seems not to be used in the most of multimeters."
     },
 
     {
@@ -508,24 +508,24 @@ const bin_ranges = [
         default: 0x8000,
         description: "50kΩ calibration (EEPROM address: 0x60)",
         proc: "num",
-        section_description: "50k resistor calibration adjustment ratio."
+        section_description: "50kΩ resistor calibration adjustment ratio."
     },
     {
         offset: 0x62,
         len: T_WORD,
         default: 0x8000,
-        description: "50 MΩ calibration (EEPROM address: 0x62)",
+        description: "50MΩ calibration (EEPROM address: 0x62)",
         proc: "num",
-        section_description: "50M resistor calibration adjustment ratio."
+        section_description: "50MΩ resistor calibration adjustment ratio."
     },
     // 0x64..0x66 - unknown
     {
         offset: 0x67,
         len: T_BYTE,
         default: 0x00,
-        description: "Ohm/Continuity (EEPROM address: 0x67)",
+        description: "Ω/Continuity (EEPROM address: 0x67)",
         proc: "num",
-        section_description: "Ohm/Continuity (???)."
+        section_description: "Ω/Continuity (???)."
     },
     // 0x68..0x6F - unknown
 
@@ -537,21 +537,21 @@ const bin_ranges = [
         proc: "num",
         section_description: "500nF capacitor calibration adjustment ratio."
     },
-    {
-        offset: 0x72,
-        len: T_WORD,
-        default: 0x8000,
-        description: "50μF calibration (EEPROM address: 0x72)",
-        proc: "num",
-        section_description: "50μF capacitor calibration adjustment ratio."
-    },
+//    {
+//        offset: 0x72,
+//        len: T_WORD,
+//        default: 0x8000,
+//        description: "50μF calibration (EEPROM address: 0x72)",
+//        proc: "num",
+//        section_description: "50μF capacitor calibration adjustment ratio."
+//    },
     {
         offset: 0x74,
         len: T_WORD,
         default: 0x8000,
-        description: "500μF calibration (EEPROM address: 0x74)",
+        description: "50μF calibration (EEPROM address: 0x74)",
         proc: "num",
-        section_description: "500μF capacitor calibration adjustment ratio."
+        section_description: "50μF capacitor calibration adjustment ratio."
     },
     {
         offset: 0x76,
@@ -567,7 +567,7 @@ const bin_ranges = [
         default: 0x0118,
         description: "Calibration: residual input capacitance (EEPROM address: 0x78)",
         proc: "num",
-        section_description: "Residual input capacitance to be subtracted (no external capacitor is connected, <strong>unit 0.001 nF, max. 9nF</strong>)."
+        section_description: "Residual input capacitance to be subtracted <strong>(unit*0.001 nF, max. 9nF).</strong>"
     },
     // 0x7A..0x7F - unknown (0x00 fill)
 
@@ -577,7 +577,7 @@ const bin_ranges = [
         default: null,
         description: "Measurement functionality (modes) setting (EEPROM address: 0x80)",
         proc: "func",
-        section_description: 'Specifies sub-modes for each mode. Modes are selected using the dial (knob) on the from face fo the multimeter. For each mode the first sub-mode is selected by default. To cycle through the sub-modes available in the current mode, short-press the <span class="button">SELECT</span>. button. The sub-modes are cycled through in a loop (that is: sub-mode 1 -> sub-mode 2 -> sub-mode 3 -> sub-mode 4 -> sub-mode 1 -> ...).'
+        section_description: 'Specifies submodes for each mode. Modes are selected using the selector on the front of multimeter. For each mode the first submode is selected by default. To cycle through the submodes available in the current mode, short-press the <span class="button">SELECT</span>. button. The submodes are cycled through in a loop (that is: submode 1 -> submode 2 -> submode 3 -> submode 4 -> submode 1 -> ...).'
     },
 
     // 0xC0..0xE7 - unknown
@@ -586,7 +586,7 @@ const bin_ranges = [
         offset: 0xE8,
         len: T_WORD,
         default: 0x8000,
-        description: "Calibration: DC 600mV adj ratio (EEPROM address: 0xE8)",
+        description: "Calibration: DC 600mV adjustment ratio (EEPROM address: 0xE8)",
         proc: "num",
         section_description: "DC 600mV range calibration adjustment ratio."
     },
@@ -594,7 +594,7 @@ const bin_ranges = [
         offset: 0xEA,
         len: T_WORD,
         default: 0x8000,
-        description: "Calibration: DC 6V adj ratio (EEPROM address: 0xEA)",
+        description: "Calibration: DC 6V adjustment ratio (EEPROM address: 0xEA)",
         proc: "num",
         section_description: "DC 6V range calibration adjustment ratio."
     },
@@ -602,7 +602,7 @@ const bin_ranges = [
         offset: 0xEC,
         len: T_WORD,
         default: 0x8000,
-        description: "Calibration: DC 60V adj ratio (EEPROM address: 0xEC)",
+        description: "Calibration: DC 60V adjustment ratio (EEPROM address: 0xEC)",
         proc: "num",
         section_description: "DC 60V range calibration adjustment ratio."
     },
@@ -610,7 +610,7 @@ const bin_ranges = [
         offset: 0xEE,
         len: T_WORD,
         default: 0x8000,
-        description: "Calibration: DC 600V adj ratio (EEPROM address: 0xEE)",
+        description: "Calibration: DC 600V adjustment ratio (EEPROM address: 0xEE)",
         proc: "num",
         section_description: "DC 600V range calibration adjustment ratio."
     },
@@ -619,7 +619,7 @@ const bin_ranges = [
         offset: 0xF0,
         len: T_WORD,
         default: 0x8000,
-        description: "Calibration: DC 1000V adj ratio (EEPROM address: 0xF0)",
+        description: "Calibration: DC 1000V adjustment ratio (EEPROM address: 0xF0)",
         proc: "num",
         section_description: "DC 1000V range calibration adjustment ratio."
     },
@@ -849,16 +849,15 @@ const measurement_modes = new Map([
 ].map(e=>[e.value,e.description]));
 
 const modeToDialPosition = new Map([
-    [0x03, ["NCV"]],
-	[0x05, ["AUTO RANGE uA~/⎓"]],
-	[0x06, ["AUTO RANGE A~/⎓"]],
-	[0x07, ["AUTO RANGE V⎓"]],
-    [0x0A, ["AUTO RANGE mA~/⎓"]],
-    [0x0B, ["Ω (Alt: Ω, continuity, diode, capacitance)"]],
-	[0x0D, ["Hz/%"]],
-	[0x0E, ["AUTO RANGE V~"]],
-	[0x0E, ["AUTO RANGE V AC"]],
-    [0x0F, ["AUTO RANGE mV~/⎓ (Alt: mv⎓, mV~, °C, °F) "]],
+    [0x03, ["<strong>NCV</strong>"]],
+	[0x05, ["<strong>μA~/⎓</strong>"]],
+	[0x06, ["<strong>A~/⎓</strong>"]],
+	[0x07, ["<strong>V⎓</strong>"]],
+    [0x0A, ["<strong>mA~/⎓</strong>"]],
+    [0x0B, ["<strong>Ω</strong>"]],
+	[0x0D, ["<strong>Hz/%</strong>"]],
+	[0x0E, ["<strong>V~</strong>"]],
+    [0x0F, ["<strong>mV~/⎓</strong>"]],
 
 ]);
 
@@ -1041,7 +1040,6 @@ function numEditor(rangeItem) {
     elEditor.addEventListener('keyup', e=>{
         const value = +e.target.value;
         elValueVisualizer.textContent = `Requested value: (dec) ${value}`;
-//        elValueVisualizer.textContent = `Requested value: (hex) 0x${toHex(value, 2)}, (dec) ${value}`;
     });
 
     elNumEditorContainer.appendChild(elValueVisualizer);
@@ -1073,7 +1071,7 @@ function bitfieldEditor(rangeItem) {
             // Add a description for the current bitfield
             const elBitfieldDescription = document.createElement('div');
             elBitfieldDescription.classList.add('bitfield_description');
-            elBitfieldDescription.innerHTML = `Bits: ${bitText} | ${desc}`;
+            elBitfieldDescription.innerHTML = `Bit: ${bitText} | ${desc}`;
             elFieldSection.appendChild(elBitfieldDescription);
         }
 
@@ -1210,7 +1208,6 @@ function calEditor(rangeItem) {
                 const value = +e.target.value;
                 const correctionFactor = value / 0x8000;
 				elValueVisualizer.textContent = `Requested value: (dec) ${value} => correction factor of ${correctionFactor}`;
-//                elValueVisualizer.textContent = `Requested value: (hex) 0x${toHex(value, 4)}, (dec) ${value} => correction factor of ${correctionFactor}`;
             });
 
             eListItem.appendChild(elValueVisualizer);
@@ -1293,9 +1290,9 @@ function modesEditor(rangeItem) {
         }
 
         // Add the mode description
-        elCurrentMeterMode.innerHTML = `Mode 0x${toHex(iMeterMode, 2)} (ZT219/AN870 dial position: ${dialInfoHtml}): <br>`;
+        elCurrentMeterMode.innerHTML = `Selector mode: <strong>0x${toHex(iMeterMode, 2)}</strong>, selector position: ${dialInfoHtml}: <br>`;
 
-        // For each sub-mode of the current mode: add a list of all available modes
+        // For each submode of the current mode: add a list of all available modes
         // with the currently set mode selected
         const elModeSubModes = document.createElement('ol');
         for (let variantOffset of [0x00, 0x10, 0x20, 0x30]) {
@@ -1305,7 +1302,7 @@ function modesEditor(rangeItem) {
             elModeSubModes.appendChild(elListItem);
         }
 
-        // Add all sub-modes to the current mode
+        // Add all submodes to the current mode
         elCurrentMeterMode.appendChild(elModeSubModes);
 
         // Add the current mode to the list of all modes
@@ -1746,8 +1743,7 @@ function processEEPROM(data) {
             sectionDescription.classList.add('section_description');
             sectionDescription.innerHTML = bin_range.section_description
             if (bin_range.default) {
-				sectionDescription.innerHTML += ` Original value: (dec) ${bin_range.default}`;
-//				sectionDescription.innerHTML += ` Original value: (dec) ${bin_range.default}, (hex) 0x${toHex(bin_range.default, 4)}`;
+				sectionDescription.innerHTML += ` <strong>Original value:</strong> (dec) ${bin_range.default}`;
             }
             elEditableItem.appendChild(sectionDescription);
         }
