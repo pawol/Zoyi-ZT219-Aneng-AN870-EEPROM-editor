@@ -4,9 +4,9 @@ Zoyi ZT219 / Aneng AN870 EEPROM Editor written in client-side in a single HTML p
 A few HW improvements pointed.
 
 
-You can download offline editor there [offline_eeprom_editor](src/index.html)
+You can download offline editor there [offline eeprom editor](src/index.html)
 Just open one locally in a browser on your computer.
-You can also use one online [online_eeprom_editor](https://pawol.github.io/Zoyi-ZT219-Aneng-AN870-EEPROM-editor/)
+You can also use one online [online eeprom editor](https://pawol.github.io/Zoyi-ZT219-Aneng-AN870-EEPROM-editor/)
 
 
 ![editor screenshot](doc/editor_screenshot.png)
@@ -29,8 +29,8 @@ The most important is to replace existing transil 6,8V onto 5 diodes bridge to e
 directly into 230 VAC socket. Transil is cheap and... nothing more. 6,8V makes that shunt resitor 1 ohm/0.2W has to bear 10x more power than in case of bridge.
 The 5 diodes bridge (popular in the majority of multimeters) does not impact a measurement precision on uA and mA range.  Capacitors improve readout stability.
 
-![hardware_mods](doc/bridge.png)
-![hardware_mods](doc/Aneng_AN870_mods.jpg)
+![hardware mods](doc/bridge.png)
+![hardware mods](doc/Aneng_AN870_mods.jpg)
 
 # Datasheets of DMM chip DTM0660L (the clone of HY12P65)
 [Aneng AN870/Zoyi ZT219 schematic diagram](doc/Zoyi_zt219_Aneng_an870_v3.1_schematic.pdf)
