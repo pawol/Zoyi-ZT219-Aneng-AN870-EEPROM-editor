@@ -1239,7 +1239,7 @@ function modesEditor(rangeItem) {
         // Add a checkbox to toggle visibility of unused modes (indicated by data-unused-mode)
         const elHideUnusedLabel = document.createElement('label');
         elHideUnusedLabel.setAttribute("for", "hide_unused_modes")
-        elHideUnusedLabel.textContent = "Hide unused modes";
+        elHideUnusedLabel.textContent = "Hide not used modes";
 
         const elHideUnusedCheckbox = document.createElement('input');
         elHideUnusedCheckbox.type = 'checkbox';
@@ -1286,11 +1286,11 @@ function modesEditor(rangeItem) {
         } else {
             elCurrentMeterMode.classList.add('unused');
             elCurrentMeterMode.setAttribute('data-unused-mode', 'true');
-            dialInfoHtml = "unused";
+            dialInfoHtml = "not used";
         }
 
         // Add the mode description
-        elCurrentMeterMode.innerHTML = `Selector mode: <strong>0x${toHex(iMeterMode, 2)}</strong>, selector position: ${dialInfoHtml}: <br>`;
+        elCurrentMeterMode.innerHTML = `Selector mode: <strong>0x${toHex(iMeterMode, 2)}</strong>, selector position: <strong>${dialInfoHtml}</strong><br>`;
 
         // For each submode of the current mode: add a list of all available modes
         // with the currently set mode selected
