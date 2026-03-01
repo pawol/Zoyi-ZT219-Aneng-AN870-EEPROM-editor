@@ -41,3 +41,6 @@ The 5 diodes bridge (popular in the majority of multimeters) does not impact a m
 
 [datasheet 3](doc/DS-HY12P65_EN.pdf)
 
+[How to calibrate](doc/calibration.txt)
+
+
