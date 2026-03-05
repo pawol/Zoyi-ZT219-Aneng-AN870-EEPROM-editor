@@ -39,9 +39,9 @@ Kalibracja:
   po kalibracji przełączyć selektor multimetra inną kalibrowaną watość (np. DC V, DC mA) lub  na OFF i zdjąć zworkę JP2
  
 - kalibracja pojemności:
-  - kondensator 470nF i nacisnąć HOLD aby miernik skalibrował się na tą wartość
-  - kondensator 47μF i nacisnąć HOLD aby miernik skalibrował się na tą wartość
-  - kondensator 47mF (jeśli trudne do wykonania to pominąć) i nacisnąć HOLD aby miernik skalibrował się na tą wartość
+  - kondensator 100nF i nacisnąć HOLD aby miernik skalibrował się na tą wartość
+  - kondensator 10μF i nacisnąć HOLD aby miernik skalibrował się na tą wartość
+  - kondensator 10mF (jeśli trudne do wykonania to pominąć) i nacisnąć HOLD aby miernik skalibrował się na tą wartość
 
   zweryfikować ponownie odczyty napięć w podanych zakresach
   po kalibracy selektor multimetra na OFF i zdjąć zworkę JP  
