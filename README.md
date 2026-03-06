@@ -30,9 +30,12 @@ I suggest to introduce some hardware modifications.
 The most important is to add additional bridge of 5x diodes 1N4007 (or M7 diodes) pararelly to the existing transil 6,8V to ensure better protection of 1 ohm/0.2W
 shunt in case of accidential connection of ammeter (200mA range) directly into 230 VAC socket. 
 Transil is cheap and... nothing more. 6,8V makes that shunt resitor 1 ohm/0.2W has to bear 10x more power than in case of bridge.
-The bridge is first early stage "relief" , TVS becomes 2nd stage protection.
+The bridge is first early stage "relief" and starts to work at 2V , TVS becomes 2nd stage protection.
 The 5 diodes bridge (popular solution in the majority of multimeters) does not impact a measurement precision on uA and mA range at all.
 Additional capacitors improve readout stability.
+It is required also to improve measurement of ammeter on 20A range. There is bug in Kelvin connection originally.
+Just cut one path and add second one properly, recalibration on 20A is necessary. This is quit easy task to do.
+Recalibration details are described below.
 
 ![hardware mods](doc/bridge.png)
 ![hardware mods](doc/Aneng_AN870_mods.jpg)
@@ -40,6 +43,7 @@ Additional capacitors improve readout stability.
 # How to recalibrate Zoyi ZT219 / Aneng AN870 properly
 
 [How to calibrate](doc/calibration.txt)
+![hardware mods](doc/recalibration_successfull.jpg)
 
 # Datasheets of DMM chip DTM0660L (the clone of HY12P65)
 
