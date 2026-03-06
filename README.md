@@ -41,7 +41,7 @@ I plane to replace "middle" diode onto 1N5408 in the future (1x 1N5408 + 4x1N400
  
 Additional capacitors improve readout stability.
 
-It is required also to improve measurement of ammeter on 20A range. There is bug on original PCB in Kelvin connection.
+It is required also to improve measurement of ammeter on 20A range. There is bug on original PCB in R33 shunt connection.
 Just cut one path and add second one properly and make main current pathes thicker.
 The main current path has originally 25% of resistance R33 shunt! 0,0025 mOhm versus 0,01 Ohm.
 The main current path is originally significiant and unstable part of R33 shunt!
