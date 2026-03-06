@@ -59,6 +59,7 @@ Recalibration details are described below.
 
 [How to recalibrate](doc/calibration.txt)
 ![hardware mods](doc/recalibration_successfull.jpg)
+You can also use eeprom editor and change calibration of 20A range in bytes 0x2E-0x2F manually.
 
 # How to reprogram eeprom after editing
 Just use the cheapest and common ch341 based programer
