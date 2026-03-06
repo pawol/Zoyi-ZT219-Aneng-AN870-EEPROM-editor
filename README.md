@@ -49,6 +49,10 @@ Recalibration details are described below.
 [How to recalibrate](doc/calibration.txt)
 ![hardware mods](doc/recalibration_successfull.jpg)
 
+# How to reprogram eeprom after editing
+Just use the cheapest [ch341 based programer](doc\ch341_programmer.jpg)
+We need to reprogram popular 24c02 eeprom, the clip is extremally comfortable to do it.
+
 # Datasheets of DMM chip DTM0660L (the clone of HY12P65)
 
 [datasheet 1](doc/DTM0660_datasheet.pdf)
