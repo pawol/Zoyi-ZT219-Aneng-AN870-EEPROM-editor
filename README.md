@@ -52,7 +52,8 @@ Recalibration details are described below.
 # How to reprogram eeprom after editing
 Just use the cheapest and common ch341 based programer
 We need to reprogram popular 24c02 eeprom, the clip is extremally comfortable to do it.
-![ch341 based programer](doc\ch341_programmer.jpg)
+
+![ch341 based programer](doc/ch341_programmer.jpg)
 
 # Datasheets of DMM chip DTM0660L (the clone of HY12P65)
 
