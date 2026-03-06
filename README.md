@@ -22,7 +22,7 @@ Should you notice any errors, want to add missing range, update the description,
 
 It should be rather easy task to modify the source code to support any other `EEPROM` - the page is generated dynamically based on [the `bin_ranges` variable]
 
-Keep in mind, every modification you make is your own risk!
+Keep in mind, every modification you make is your own risk and responsibility!
 
 # Hardware improvements
 
