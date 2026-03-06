@@ -24,7 +24,8 @@ It should be rather easy task to modify the source code to support any other `EE
 
 # Hardware improvements
 
-Look at the original [Aneng AN870/Zoyi ZT219 schematic diagram](doc/Zoyi_zt219_Aneng_an870_v3.1_schematic.pdf)
+Look at the original
+![Aneng AN870/Zoyi ZT219 schematic diagram](doc/Zoyi_zt219_Aneng_an870_v3.1_schematic.pdf)
 
 I suggest to introduce some hardware modifications.
 The most important is to add additional bridge of 5x diodes 1N4007 (or M7 diodes) pararelly to the existing transil 6,8V to ensure better protection of 1 ohm/0.2W
