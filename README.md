@@ -42,7 +42,7 @@ Recalibration details are described below.
 
 # How to recalibrate Zoyi ZT219 / Aneng AN870 properly
 
-[How to calibrate](doc/calibration.txt)
+[How to recalibrate](doc/calibration.txt)
 ![hardware mods](doc/recalibration_successfull.jpg)
 
 # Datasheets of DMM chip DTM0660L (the clone of HY12P65)
